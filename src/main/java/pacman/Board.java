@@ -3,35 +3,34 @@ package pacman;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 
 public class Board {
 
 
 
-    Pacman pacman = new Pacman(0,new Image("pac.png") , null, null);
-
-    Ghost redGhost = new Ghost(0, new Image("redghost.png"), null);
-
-    Ghost blueGhost = new Ghost(0, new Image("blueghost.png"), null);
-
-    Ghost orangeGhost = new Ghost(0, new Image("orangeghost.png"), null);
-
-    Ghost pinkGhost = new Ghost(0, new Image("pinkghost.png"), null);
-
+    Pacman pacman = new Pacman(0,new ImageView("pac.png") , null, null);
+    Ghost redGhost = new Ghost(0, new ImageView("redghost.png"), null);
+    Ghost blueGhost = new Ghost(0, new ImageView("blueghost.png"), null);
+    Ghost orangeGhost = new Ghost(0, new ImageView("orangeghost.png"), null);
+    Ghost pinkGhost = new Ghost(0, new ImageView("pinkghost.png"), null);
     Wall wall = new Wall(new Image("wall.png"), null);
-
     BigFood bigFood = new BigFood(new Image("bigfood.jpg"), null);
-
     NormalFood normalFood = new NormalFood(new Image("normalfood.png"), null);
 
-    Image pacmanImage = pacman.getImage();
-    Image redGhostImage = redGhost.getImage();
-    Image blueGhostImage = blueGhost.getImage();
-    Image orangeGhostImage = orangeGhost.getImage();
-    Image pinkGhostImage = pinkGhost.getImage();
+    
+    ImageView pacmanImage = pacman.getImage();
+    ImageView redGhostImage = redGhost.getImage();
+    ImageView blueGhostImage = blueGhost.getImage();
+    ImageView orangeGhostImage = orangeGhost.getImage();
+    ImageView pinkGhostImage = pinkGhost.getImage();
     Image wallImage = wall.getImage();
     Image bigFoodImage = bigFood.getImage();
     Image normalFoodImage = normalFood.getImage();
+
+
 
 
 
@@ -85,7 +84,10 @@ public class Board {
                             break;
         
                         case 'r':
-                            graphics.drawImage(redGhostImage, x, y, tile_size, tile_size);
+                            redGhostImage.setX(column*tile_size);
+                            redGhostImage.setY(row*tile_size);
+                            redGhostImage.setFitHeight(tile_size-5);
+                            redGhostImage.setFitWidth(tile_size-5);
                             break;
                         
                         case 'w':
@@ -93,19 +95,35 @@ public class Board {
                             break;
                         
                         case 'g':
-                            graphics.drawImage(blueGhostImage, x, y, tile_size, tile_size);
+                            blueGhostImage.setX(column*tile_size);
+                            blueGhostImage.setY(row*tile_size);
+                            blueGhostImage.setFitHeight(tile_size-5);
+                            blueGhostImage.setFitWidth(tile_size-5);                            
                             break;
         
                         case 'p':
-                            graphics.drawImage(pinkGhostImage, x, y, tile_size, tile_size);
+                            pinkGhostImage.setX(column*tile_size);
+                            pinkGhostImage.setY(row*tile_size);
+                            pinkGhostImage.setFitHeight(tile_size-5);
+                            pinkGhostImage.setFitWidth(tile_size-5);
                             break;
         
                         case 'o':
-                            graphics.drawImage(orangeGhostImage, x, y, tile_size, tile_size);
+                            orangeGhostImage.setX(column*tile_size);
+                            orangeGhostImage.setY(row*tile_size);
+                            orangeGhostImage.setFitHeight(tile_size-5);
+                            orangeGhostImage.setFitWidth(tile_size-5);
+
+
                             break;
         
                         case 'h':
-                            graphics.drawImage(pacmanImage, x, y, tile_size, tile_size);
+                            pacmanImage.setX(column*tile_size);
+                            pacmanImage.setY(row*tile_size);
+                            pacmanImage.setFitHeight(tile_size);
+                            pacmanImage.setFitWidth(tile_size);
+
+
                             break;
         
                         case 'b':
@@ -129,4 +147,5 @@ public class Board {
     public void resetAfterDeath() {
         
     }
+
 }

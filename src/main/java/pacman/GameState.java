@@ -2,7 +2,8 @@ package pacman;
 
 public class GameState {
 
-    int pacmanLives;
+    private int pacmanLives;
+    private int gameState;
 
     public void updateGameState() {
 

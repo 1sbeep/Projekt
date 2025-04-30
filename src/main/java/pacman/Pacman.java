@@ -1,10 +1,16 @@
 package pacman;
 
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.paint.Color;
 
 public class Pacman extends MovingObjects {
 
-    private String direction;
+    public String direction;
     
 
 
@@ -13,19 +19,39 @@ public class Pacman extends MovingObjects {
 
     //Image image = new Image("pac.png");
 
-    public Pacman(int speed, Image image, int[] position, String direction) {
+    public Pacman(int speed, ImageView image, int[] position, String direction) {
         this.speed=speed;
         this.image=image;
         this.position=position;
         this.direction=direction;
 
     }
+
+    
     
     public void move() {
-
     }
 
-    public Image getImage() {
+    public ImageView getImage() {
         return this.image;
+    }
+    
+
+    public void move(KeyEvent event) {
+        if (event.getCode() == KeyCode.UP) {
+            direction = "UP";
+        }
+        else if (event.getCode() == KeyCode.DOWN) {
+            direction = "DOWN";
+        }
+        else if (event.getCode() == KeyCode.LEFT) {
+            direction = "LEFT";
+        }
+        else if (event.getCode() == KeyCode.RIGHT) {
+            direction = "RIGHT";
+        }
+        else {
+            direction = "NO DIRECTION";
+        }
     }
 }

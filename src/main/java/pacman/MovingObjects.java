@@ -1,10 +1,11 @@
 package pacman;
 
-import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 
 abstract class MovingObjects {
     public int speed;
-    public Image image;
+    public ImageView image;
     public int[] position;
     abstract void move();
     

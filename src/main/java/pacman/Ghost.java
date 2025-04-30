@@ -1,6 +1,7 @@
 package pacman;
 
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class Ghost extends MovingObjects {
 
@@ -8,7 +9,7 @@ public class Ghost extends MovingObjects {
 
 
 
-    public Ghost(int speed, Image image, int[] position) {
+    public Ghost(int speed, ImageView image, int[] position) {
         this.speed=speed;
         this.image=image;
         this.position=position;
@@ -29,7 +30,7 @@ public class Ghost extends MovingObjects {
 
     }
 
-    public Image getImage() {
+    public ImageView getImage() {
         return this.image;
     }
     
