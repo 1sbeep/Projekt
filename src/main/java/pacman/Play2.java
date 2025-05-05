@@ -36,13 +36,13 @@ public class Play2 extends Application {
         Scene scene = new Scene(pane, 620,650 ,Color.BLACK);
 
 
-        scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
-            @Override
+        //scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
+          //  @Override
             
-            public void handle(KeyEvent event) {
-                pacman.move(event);
-            }
-        });
+            //public void handle(KeyEvent event) {
+              //  pacman.move(event);
+            //}
+        //});
 
         //scene.setOnKeyReleased(new EventHandler<KeyEvent>() {
           //  @Override

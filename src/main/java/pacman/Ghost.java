@@ -7,8 +7,6 @@ public class Ghost extends MovingObjects {
 
     private int ghostState;
 
-
-
     public Ghost(int speed, ImageView image, int[] position) {
         this.speed=speed;
         this.image=image;
